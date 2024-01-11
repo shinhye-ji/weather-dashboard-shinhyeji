@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+  <header class="text-bg-primary p-3 d-flex justify-content-end">
+    <h1>Weather Dashboard</h1>
+  </header>
+
+  <main class="container mt-4">
+    <nav class="navbar row">
+      <div class="col-md-6">
+        <div class="d-flex input-group">
+          <input type="text" id="searchCity" class="form-control" placeholder="Enter city name">
+          <div class="input-group-append">
+            <button id="searchBtn" class="btn btn-primary">Search</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card currentCity">
+          <div class="card-body currentCityBody">
+            <h2 id="currentDate"></h2>
+            <img id="currentIcon" src="" alt="weather icon">
+            <p id="currentTemp"></p>
+            <p id="currentWind"></p>
+            <p id="currentHumidity"></p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </main>
+
+  <div class="container">
+    <div class="row mt-4">
+      <div class="card col forecast">
+        <div class="card-body currentCityBody">
+          <h2 id="day1Date"></h2>
+          <img id="day1Icon" src="" alt="weather icon">
+          <p id="day1Temp"></p>
+          <p id="day1Wind"></p>
+          <p id="day1Humidity"></p>
+        </div>
+      </div>
+      <div class="card col forecast">
+        <div class="card-body currentCityBody">
+          <h2 id="day2Date"></h2>
+          <img id="day2Icon" src="" alt="weather icon">
+          <p id="day2Temp"></p>
+          <p id="day2Wind"></p>
+          <p id="day2Humidity"></p>
+        </div>
+      </div>
+      <div class="card col forecast">
+        <div class="card-body currentCityBody">
+          <h2 id="day3Date"></h2>
+          <img id="day3Icon" src="" alt="weather icon">
+          <p id="day3Temp"></p>
+          <p id="day3Wind"></p>
+          <p id="day3Humidity"></p>
+        </div>
+      </div>
+      <div class="card col forecast">
+        <div class="card-body currentCityBody">
+          <h2 id="day4Date"></h2>
+          <img id="day4Icon" src="" alt="weather icon">
+          <p id="day4Temp"></p>
+          <p id="day4Wind"></p>
+          <p id="day4Humidity"></p>
+        </div>
+      </div>
+      <div class="card col forecast">
+        <div class="card-body currentCityBody">
+          <h2 id="day5Date"></h2>
+          <img id="day5Icon" src="" alt="weather icon">
+          <p id="day5Temp"></p>
+          <p id="day5Wind"></p>
+          <p id="day5Humidity"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <footer></footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./assets/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+</body>
+
+</html>
