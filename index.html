@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
   <header class="text-bg-primary p-3 d-flex justify-content-end">
     <h1>Weather Dashboard</h1>
   </header>
@@ -19,11 +18,18 @@
   <main class="container mt-4">
     <nav class="navbar row">
       <div class="col-md-6">
-        <div class="d-flex input-group">
+        <div class="d-flex input-group"> 
+          
           <input type="text" id="searchCity" class="form-control" placeholder="Enter city name">
+         
           <div class="input-group-append">
             <button id="searchBtn" class="btn btn-primary">Search</button>
           </div>
+        </div>
+        
+        <div id="searchHistory">
+            <h3></h3>
+            <ul id="searchHistoryList"></ul>
         </div>
       </div>
 
@@ -90,9 +96,8 @@
       </div>
     </div>
   </div>
-  </div>
 
-  <footer></footer>
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="./assets/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>

@@ -17,7 +17,7 @@ JavaScript
 
 ## Screenshots
 
-
+![weather homepage](./assets/image/Screenshot%20(36).png)
 
 ## Contact
 
@@ -25,4 +25,4 @@ JavaScript
 
 ## Live Link
 
-[Live](#)
+[Live](https://shinhye-ji.github.io/weather-dashboard-shinhyeji/)

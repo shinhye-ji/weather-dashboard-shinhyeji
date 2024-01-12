@@ -8,17 +8,30 @@ const formSubmitHandler = function (event) {
   
     if (city) { // truthy / true
       getWeather(city); // call 
-  
+      saveSearch(city);
+
     } else {
       alert('Please enter a city name');
     }
-  };
+};
+
+window.onload = function () {
+    displaySearchHistory();
+}
 
 $("#searchBtn").on("click", formSubmitHandler);
+
+document.getElementById('searchHistoryList').addEventListener('click', function(event){
+    if (event.target.tagName === 'LI') {
+        const cityName = event.target.textContent;
+        getWeather(cityName);
+    }
+});
 
 function getWeather (requestUrl) {
     const currentDate = dayjs().format('MMMM D, YYYY');
     document.querySelector('#currentDate').textContent = currentDate;
+    ;
 
     const fetchUrl = `http://api.openweathermap.org/data/2.5/weather?q=${requestUrl}&appid=` + apiKey + `&units=imperial`;
     fetch(fetchUrl) 
@@ -82,7 +95,22 @@ function getWeather (requestUrl) {
             document.querySelector('#day5Humidity').textContent= "Humidity: " + data.list[35].main.humidity + "%";
 
         }) 
-    }
+};
+
+function saveSearch(city) {
+    const searches = JSON.parse(localStorage.getItem('searches')) || [];
+    searches.push(city); 
+
+    localStorage.setItem('searches', JSON.stringify(searches));
+    displaySearchHistory();
+};
+
+function displaySearchHistory() {
+    const searchHistoryList = document.getElementById('searchHistoryList');
+    searchHistoryList.innerHTML = '';
+};
+
+
 // when i search for a city, weather from 5 days shows up and will be added to the search history (localStorage)
 // in a card, the current weather conditions will apear as well as the date, city name, an icon representing current weather condition, temp, humidity, and wind speed.
 // the same thing will appear for FUTURE weather conditions.
