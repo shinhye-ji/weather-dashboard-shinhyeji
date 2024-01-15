@@ -1,6 +1,8 @@
 const apiKey = '4cf0f11bba614bf4d1fcfd31a7ec59b0';
 const cityName = document.getElementById('searchCity');
 
+const searches = JSON.parse(localStorage.getItem('searches')) || [];
+
 const formSubmitHandler = function (event) {
     event.preventDefault();
   
@@ -98,16 +100,25 @@ function getWeather (requestUrl) {
 };
 
 function saveSearch(city) {
-    const searches = JSON.parse(localStorage.getItem('searches')) || [];
+    if (!searches.includes(city)) {
+   
     searches.push(city); 
 
     localStorage.setItem('searches', JSON.stringify(searches));
-    displaySearchHistory();
+    displaySearchHistory(); 
+    };
 };
 
 function displaySearchHistory() {
     const searchHistoryList = document.getElementById('searchHistoryList');
     searchHistoryList.innerHTML = '';
+
+    for (let i = 0; i < searches.length; i++) {
+        let li = document.createElement('li');
+        li.textContent = searches[i];
+        searchHistoryList.appendChild(li);
+        
+    }
 };
 
 
